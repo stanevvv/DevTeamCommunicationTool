@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataAccessLayer
+namespace Common
 {
     public class Class1
     {
