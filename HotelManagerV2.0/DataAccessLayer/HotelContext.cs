@@ -19,6 +19,10 @@ namespace DataAccessLayer
 
         public DbSet<Room> Rooms { get; set; }
 
+        public DbSet<Question> Questions { get; set; }
+
+        public DbSet<QuestionSender> QuestionSenders { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
