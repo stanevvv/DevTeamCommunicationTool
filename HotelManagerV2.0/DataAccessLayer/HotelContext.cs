@@ -23,6 +23,8 @@ namespace DataAccessLayer
 
         public DbSet<QuestionSender> QuestionSenders { get; set; }
 
+        public DbSet<Reservation> Reservations { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

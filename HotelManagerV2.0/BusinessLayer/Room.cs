@@ -8,6 +8,7 @@ namespace BusinessLayer
 {
     public class Room
     {
+        int capacity;
 
         public int Id { get; set; }
 
@@ -22,7 +23,7 @@ namespace BusinessLayer
 
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = ErrorMesseges.negativeNumberErrorMessage)]
-        public int Capacity { get; set; }
+        public int Capacity { get => capacity; set => capacity = (int)RoomType; }
 
         [Required]
         public bool IsFree { get; set; }

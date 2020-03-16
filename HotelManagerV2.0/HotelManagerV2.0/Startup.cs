@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
+using BusinessLayer;
 
 namespace HotelManagerV2._0
 {
