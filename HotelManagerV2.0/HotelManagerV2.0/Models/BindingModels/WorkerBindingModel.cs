@@ -1,15 +1,14 @@
-﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 using Common;
 
-namespace BusinessLayer
+namespace HotelManagerV2._0.Models.BindingModels
 {
-    public class Worker : IdentityUser
+    public class WorkerBindingModel
     {
-
         [Required]
         [Display(Name = "First name")]
         [MaxLength(30)]
@@ -28,12 +27,28 @@ namespace BusinessLayer
         [RegularExpression("^\\D*$", ErrorMessage = ErrorMesseges.containsNumbersErrorMessege)]
         public string LastName { get; set; }
 
+        [Required]
+        [Display(Name = "Email")]
+        [MaxLength(30)]
+        public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Password")]
+        [MaxLength(30)]
+        public string Password { get; set; }
+
+        [Required]
+        [Display(Name = "Phone number")]
+        [StringLength(10)]
+        [Range(0, Int64.MaxValue, ErrorMessage = ErrorMesseges.containsLettersErrorMessege)]
+        public string PhoneNumber { get; set; }
 
         [Required]
         [Display(Name = "Identity number")]
         [StringLength(10, MinimumLength = 10, ErrorMessage = ErrorMesseges.doesntHave10CharactersErrorMessege)]
         [Range(0, Int64.MaxValue, ErrorMessage = ErrorMesseges.containsLettersErrorMessege)]
         public string IdentityNumber { get; set; }
+
 
         DateTime dateOfAppointment;
 
@@ -48,21 +63,6 @@ namespace BusinessLayer
             set
             {
                 dateOfAppointment = value.Date;
-            }
-        }
-
-        DateTime dateOfDischarge;
-
-        [Display(Name = "Date of Discharge")]
-        public DateTime DateOfDischarge
-        {
-            get
-            {
-                return dateOfDischarge.Date;
-            }
-            set
-            {
-                dateOfDischarge = value.Date;
             }
         }
     }
