@@ -1,12 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200303084520_AddedIdentities.cs" />
+    <Compile Remove="Migrations\20200303084520_AddedIdentities.Designer.cs" />
+    <Compile Remove="Migrations\20200303093010_AddedClientsAndRooms.cs" />
+    <Compile Remove="Migrations\20200303093010_AddedClientsAndRooms.Designer.cs" />
+    <Compile Remove="Migrations\20200314141257_AddedQuestionAndQuestionSender.cs" />
+    <Compile Remove="Migrations\20200314141257_AddedQuestionAndQuestionSender.Designer.cs" />
     <Compile Remove="Migrations\20200316174938_AddedCustomWorkerClassAndReservationTable.cs" />
     <Compile Remove="Migrations\20200316174938_AddedCustomWorkerClassAndReservationTable.Designer.cs" />
+    <Compile Remove="Migrations\20200316181853_AddedReservationTable.cs" />
+    <Compile Remove="Migrations\20200316181853_AddedReservationTable.Designer.cs" />
+    <Compile Remove="Migrations\20200322151240_Initialize.cs" />
+    <Compile Remove="Migrations\20200322151240_Initialize.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

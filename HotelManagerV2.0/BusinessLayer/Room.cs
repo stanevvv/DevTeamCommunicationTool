@@ -8,9 +8,7 @@ namespace BusinessLayer
 {
     public class Room
     {
-        int capacity;
-
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         [Display(Name = "Room type")]
@@ -21,6 +19,7 @@ namespace BusinessLayer
         [Display(Name = "Room number")]
         public int RoomNumber { get; set; }
 
+        int capacity;
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = ErrorMesseges.negativeNumberErrorMessage)]
         public int Capacity { get => capacity; set => capacity = (int)RoomType; }

@@ -7,7 +7,7 @@ namespace BusinessLayer
 {
     public class Client
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         [MaxLength(25)]

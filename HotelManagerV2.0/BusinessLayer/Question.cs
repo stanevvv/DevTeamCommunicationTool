@@ -7,7 +7,7 @@ namespace BusinessLayer
 {
     public class Question
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         [MaxLength(250)]

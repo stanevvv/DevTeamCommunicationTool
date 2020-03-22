@@ -6,6 +6,8 @@ namespace BusinessLayer
 {
     public enum RoomType
     {
+        // RoomType = Capacity
+
         SingleBed = 1,
         TwoSingleBeds = 2,
         ThreeSingleBeds = 3,
