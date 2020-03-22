@@ -8,10 +8,7 @@ namespace BusinessLayer
 {
     public class Reservation
     {
-        DateTime reservationStartDate;
-        DateTime reservationEndDate;
-
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         [Display(Name = "Reserved room")]
@@ -26,6 +23,7 @@ namespace BusinessLayer
         [Display(Name = "Guest count")]
         public int GuestCount { get; set; }
 
+        DateTime reservationStartDate;
         [Required]
         [Display(Name = "Start date")]
         public DateTime StartDate 
@@ -39,6 +37,8 @@ namespace BusinessLayer
                 reservationStartDate = value.Date;
             }
         }
+
+        DateTime reservationEndDate;
         [Required]
         [Display(Name = "End date")]
         public DateTime EndDate

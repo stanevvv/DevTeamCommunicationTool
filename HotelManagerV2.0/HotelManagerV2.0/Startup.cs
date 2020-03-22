@@ -29,8 +29,8 @@ namespace HotelManagerV2._0
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<HotelContext>(options => options.UseSqlServer(
-                    Configuration.GetConnectionString("DenisDbStr")));
-            services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+                    Configuration.GetConnectionString("StanevDbStrPC")));
+            services.AddIdentity<Worker, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<HotelContext>();
 
             services.AddControllersWithViews();

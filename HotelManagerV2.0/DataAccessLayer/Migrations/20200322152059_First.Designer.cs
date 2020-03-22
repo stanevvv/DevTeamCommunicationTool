@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(HotelContext))]
-    [Migration("20200314141257_AddedQuestionAndQuestionSender")]
-    partial class AddedQuestionAndQuestionSender
+    [Migration("20200322152059_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,9 +23,9 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("BusinessLayer.Client", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
@@ -60,9 +60,9 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("BusinessLayer.Question", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("QuestionAsked")
@@ -70,8 +70,8 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(250)")
                         .HasMaxLength(250);
 
-                    b.Property<int?>("SenderId")
-                        .HasColumnType("int");
+                    b.Property<long?>("SenderId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
@@ -82,9 +82,9 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("BusinessLayer.QuestionSender", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Address")
@@ -132,11 +132,51 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("QuestionSenders");
                 });
 
+            modelBuilder.Entity("BusinessLayer.Reservation", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("ClientId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("GuestCount")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsAllInclusive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsBreakfastIncluded")
+                        .HasColumnType("bit");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<long>("ReservedRoomId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("ReservedRoomId");
+
+                    b.ToTable("Reservations");
+                });
+
             modelBuilder.Entity("BusinessLayer.Room", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("AdultPrice")
@@ -363,6 +403,21 @@ namespace DataAccessLayer.Migrations
                     b.HasOne("BusinessLayer.QuestionSender", "Sender")
                         .WithMany()
                         .HasForeignKey("SenderId");
+                });
+
+            modelBuilder.Entity("BusinessLayer.Reservation", b =>
+                {
+                    b.HasOne("BusinessLayer.Client", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BusinessLayer.Room", "ReservedRoom")
+                        .WithMany()
+                        .HasForeignKey("ReservedRoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
