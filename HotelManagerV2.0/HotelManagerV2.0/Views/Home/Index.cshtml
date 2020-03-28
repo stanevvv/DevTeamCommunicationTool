@@ -3,17 +3,17 @@
 }
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Roxandrea - Free Bootstrap 4 Template by Colorlib</title>
+<head>
+    <title>Hotel Manager</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -25,29 +25,49 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-    
+
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-  </head>
+    <link rel="icon" href="~/favicon.png">
+</head>
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Roxandrea</a>
+	      <a class="navbar-brand" href="index.html">Hotel Manager</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="rooms.html" class="nav-link">Rooms</a></li>
-	          <li class="nav-item"><a href="restaurant.html" class="nav-link">Restaurant</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	        </ul>
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active"><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
+                  <li class="nav-item"><a asp-controller="Rooms" asp-action="Rooms" class="nav-link">Rooms</a></li>
+                  <li class="nav-item"><a asp-controller="About" asp-action="About" class="nav-link">About</a></li>
+                  <li class="nav-item"><a asp-controller="Contact" asp-action="Contact" class="nav-link">Contact</a></li>
+                  <li class="nav-item dropdown show">
+                      <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Do you work here?
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <form>
+                              <div class="form-group">
+                                  <input type="text" class="form-control dropdown-item" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+                              </div>
+                              <hr />
+                              <div class="form-group">
+                                  <input type="password" class="form-control dropdown-item" id="exampleInputPassword1" placeholder="Password">
+                              </div>
+                              <hr />
+                              <div class="form-check">
+                                  <a class="form-check-label dropdown-item">Forgoten Password?</a>
+                              </div>
+                              <button type="submit" class="btn btn-primary dropdown-item">LogIn</button>
+                          </form>
+                      </div>
+                  </li>
+              </ul>
 	      </div>
 	    </div>
 	  </nav>
@@ -65,7 +85,7 @@
 	          <div class="row no-gutters slider-text align-items-center">
 	          <div class="col-md-8 ftco-animate">
 	          	<div class="text mb-5 pb-5">
-		            <h1 class="mb-3">Roxandrea</h1>
+		            <h1 class="mb-3">Hotel Manager</h1>
 		            <h2>More than a hotel... an experience</h2>
 	            </div>
 	          </div>
@@ -80,7 +100,7 @@
 	          <div class="col-md-8 ftco-animate">
 	          	<div class="text mb-5 pb-5">
 		            <h1 class="mb-3">Experience Epic Beauty</h1>
-		            <h2>Roxandrea Hotel &amp; Resort</h2>
+		            <h2>Hotel Manager &amp; Resort</h2>
 	            </div>
 	          </div>
 	        </div>
@@ -209,7 +229,7 @@
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Welcome to Roxandrea Hotel</span>
+          	<span class="subheading">Welcome to Hotel Manager</span>
             <h2 class="mb-4">A New Vision of Luxury Hotel</h2>
           </div>
         </div>  
@@ -282,7 +302,7 @@
     	<div class="container-fluid px-0">
     		<div class="row no-gutters justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Roxandrea Rooms</span>
+          	<span class="subheading">Hotel Manager Rooms</span>
             <h2 class="mb-4">Hotel Master's Rooms</h2>
           </div>
         </div>  
@@ -291,7 +311,7 @@
     				<div class="room-wrap">
     					<div class="img d-flex align-items-center" style="background-image: url(images/bg_3.jpg);">
     						<div class="text text-center px-4 py-4">
-    							<h2>Welcome to <a href="index.html">Roxandrea</a> Hotel</h2>
+    							<h2>Welcome to <a href="index.html">Hotel Manager</a> Hotel</h2>
     							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
     						</div>
     					</div>
@@ -712,7 +732,7 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Roxandrea</h2>
+              <h2 class="ftco-heading-2">Hotel Manager</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>

@@ -1,71 +1,95 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿/* About Page images */
+.about-img-header {
+    background-image: url('../images/bg_1.jpg');
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+.about-body-image {
+    background-image: url('../images/bg_2.jpg');
+}
+.about-video {
+    height: 800px;
+    background-image: url('../images/bg_1.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+.about-testimony-1 {
+    background-image: url('../images/person_1.jpg');
+}
+.about-testimony-2 {
+    background-image: url('../images/person_2.jpg');
+}
+.about-testimony-3 {
+    background-image: url('../images/person_3.jpg');
+}
+.about-insta-1 {
+    background-image: url('../images/insta-1.jpg');
+}
+.about-insta-2 {
+    background-image: url('../images/insta-2.jpg');
+}
+.about-insta-3 {
+    background-image: url('../images/insta-3.jpg');
+}
+.about-insta-4 {
+    background-image: url('../images/insta-4.jpg');
+}
+.about-insta-5 {
+    background-image: url('../images/insta-5.jpg');
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Main Blog Page Images */
+
+/* Blog Single Page Images */
+
+/* Contact Page Images */
+.contact-header-img {
+    background-image: url('../images/bg_1.jpg');
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Restaurant Page Images*/
+
+/* Rooms Main Page Images */
+.rooms-header-img {
+    background-image: url('../images/bg_1.jpg');
+}
+.rooms-card-1 {
+    background-image: url('../images/room-1.jpg');
+}
+.rooms-card-2 {
+    background-image: url('../images/room-2.jpg');
+}
+.rooms-card-3 {
+    background-image: url('../images/room-3.jpg');
+}
+.rooms-card-4 {
+    background-image: url('../images/room-4.jpg');
+}
+.rooms-card-5 {
+    background-image: url('../images/room-5.jpg');
+}
+.rooms-card-6 {
+    background-image: url('../images/room-6.jpg');
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
+/* Single Room Page Images */
+.room-header-img {
+    background-image: url('../images/bg_1.jpg');
 }
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.room-img-1 {
+    background-image: url('../images/room-1.jpg');
 }
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
+.room-img-2 {
+    background-image: url('../images/room-2.jpg');
 }
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+.room-img-3 {
+    background-image: url('../images/room-3.jpg');
 }
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.room-img-4 {
+    background-image: url('../images/room-4.jpg');
 }
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+.room-img-5 {
+    background-image: url('../images/room-5.jpg');
 }
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+.room-img-6 {
+    background-image: url('../images/room-6.jpg');
 }
