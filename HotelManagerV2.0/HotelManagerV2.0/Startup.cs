@@ -13,6 +13,9 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 using DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
 using BusinessLayer;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace HotelManagerV2._0
 {
@@ -30,11 +33,31 @@ namespace HotelManagerV2._0
         {
             services.AddDbContext<HotelContext>(options => options.UseSqlServer(
                     Configuration.GetConnectionString("StanevDbStrPC")));
-            services.AddIdentity<Worker, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<HotelContext>();
+
+            services.AddIdentity<Worker, IdentityRole>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = true;
+                options.Password.RequireNonAlphanumeric = false;
+
+            }).AddEntityFrameworkStores<HotelContext>()
+              .AddSignInManager<Worker>()
+              .AddRoleManager<RoleManager<IdentityRole>>();
+            
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+             .AddJwtBearer(options =>
+             {
+                 options.TokenValidationParameters = new TokenValidationParameters
+                 {
+                     ValidateIssuerSigningKey = true,
+                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
+                           .GetBytes(Configuration.GetSection("AppSettings:Key").Value)),
+                     ValidateIssuer = false,
+                     ValidateAudience = false
+                 };
+             });
 
             services.AddControllersWithViews();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +78,7 @@ namespace HotelManagerV2._0
             app.UseAuthentication();
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

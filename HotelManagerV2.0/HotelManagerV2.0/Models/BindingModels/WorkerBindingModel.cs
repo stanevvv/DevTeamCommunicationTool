@@ -33,7 +33,12 @@ namespace HotelManagerV2._0.Models.BindingModels
         public string Email { get; set; }
 
         [Required]
+        [MaxLength(30)]
+        public string Username { get; set; }
+
+        [Required]
         [Display(Name = "Password")]
+        [DataType(DataType.Password)]
         [MaxLength(30)]
         public string Password { get; set; }
 
