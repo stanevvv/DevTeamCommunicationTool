@@ -21,6 +21,10 @@
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Rooms\" />
+  </ItemGroup>
+
 
 
 </Project>
