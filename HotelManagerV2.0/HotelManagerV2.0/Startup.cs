@@ -40,7 +40,7 @@ namespace HotelManagerV2._0
                 options.Password.RequireNonAlphanumeric = false;
 
             }).AddEntityFrameworkStores<HotelContext>()
-              .AddSignInManager<Worker>()
+              .AddSignInManager<SignInManager<Worker>>()
               .AddRoleManager<RoleManager<IdentityRole>>();
             
 
@@ -78,7 +78,6 @@ namespace HotelManagerV2._0
             app.UseAuthentication();
             app.UseRouting();
 
-            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

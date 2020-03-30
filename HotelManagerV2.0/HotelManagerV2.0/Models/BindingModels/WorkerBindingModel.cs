@@ -54,9 +54,9 @@ namespace HotelManagerV2._0.Models.BindingModels
         [Range(0, Int64.MaxValue, ErrorMessage = ErrorMesseges.containsLettersErrorMessege)]
         public string IdentityNumber { get; set; }
 
+        public bool IsAdmin { get; set; }
 
         DateTime dateOfAppointment;
-
         [Required]
         [Display(Name = "Date of Appointment")]
         public DateTime DateOfAppointment
