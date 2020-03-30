@@ -4,10 +4,11 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using BusinessLayer;
+using Microsoft.AspNetCore.Identity;
 
 namespace DataAccessLayer
 {
-    public class HotelContext : IdentityDbContext
+    public class HotelContext : IdentityDbContext<Worker>
     {
         public HotelContext(DbContextOptions<HotelContext> options) 
             : base(options)
@@ -29,6 +30,9 @@ namespace DataAccessLayer
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            //builder.Entity<IdentityUser>().ToTable("AspNetUsers");
+            builder.Entity<Worker>().ToTable("AspNetUsers");
+            
             base.OnModelCreating(builder);
         }
     }
