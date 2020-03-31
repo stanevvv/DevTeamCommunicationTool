@@ -38,7 +38,8 @@ namespace HotelManagerV2._0.Controllers
             Question question = new Question()
             {
                 Subject = model.Subject,
-                QuestionAsked = model.QuestionAsked
+                QuestionAsked = model.QuestionAsked,
+                Sender = sender
             };
             await _context.Questions.AddAsync(question);
             await _context.QuestionSenders.AddAsync(sender);
