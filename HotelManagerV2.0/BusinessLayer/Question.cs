@@ -10,6 +10,10 @@ namespace BusinessLayer
         public long Id { get; set; }
 
         [Required]
+        [MaxLength(25)]
+        public string Subject { get; set; }
+
+        [Required]
         [MaxLength(250)]
         public string QuestionAsked { get; set; }
 

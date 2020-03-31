@@ -8,7 +8,7 @@ using Common;
 namespace BusinessLayer
 {
     public class Worker : IdentityUser
-    { 
+    {
 
         [Required]
         [Display(Name = "First name")]
