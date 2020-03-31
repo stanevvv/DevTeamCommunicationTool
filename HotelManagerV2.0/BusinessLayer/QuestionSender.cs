@@ -33,7 +33,7 @@ namespace BusinessLayer
         public string PhoneNumber { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [MaxLength(40)]
         public string Email { get; set; }
 
         [MaxLength(30)]

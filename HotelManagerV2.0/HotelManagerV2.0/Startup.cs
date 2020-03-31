@@ -32,7 +32,7 @@ namespace HotelManagerV2._0
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<HotelContext>(options => options.UseSqlServer(
-                    Configuration.GetConnectionString("DenisDbStr")));
+                    Configuration.GetConnectionString("StanevDbStrPC")));
 
             services.AddIdentity<Worker, IdentityRole>(options =>
             {
