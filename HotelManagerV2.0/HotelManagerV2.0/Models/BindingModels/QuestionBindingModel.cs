@@ -46,6 +46,10 @@ namespace HotelManagerV2._0.Models.BindingModels
         public string Zip { get; set; }
 
         [Required]
+        [MaxLength(25)]
+        public string Subject { get; set; }
+
+        [Required]
         [MaxLength(250)]
         public string QuestionAsked { get; set; }
     }

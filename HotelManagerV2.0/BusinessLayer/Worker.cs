@@ -7,7 +7,7 @@ using Common;
 
 namespace BusinessLayer
 {
-    public class Worker : IdentityUser
+    public class Worker : IdentityUser<string>
     {
 
         [Required]

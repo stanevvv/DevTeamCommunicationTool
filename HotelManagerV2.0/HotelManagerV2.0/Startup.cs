@@ -32,7 +32,7 @@ namespace HotelManagerV2._0
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<HotelContext>(options => options.UseSqlServer(
-                    Configuration.GetConnectionString("StanevDbStrPC")));
+                    Configuration.GetConnectionString("DenisDbStr")));
 
             services.AddIdentity<Worker, IdentityRole>(options =>
             {
@@ -40,9 +40,9 @@ namespace HotelManagerV2._0
                 options.Password.RequireNonAlphanumeric = false;
 
             }).AddEntityFrameworkStores<HotelContext>()
-              .AddSignInManager<Worker>()
+              .AddSignInManager<SignInManager<Worker>>()
               .AddRoleManager<RoleManager<IdentityRole>>();
-            
+
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
              .AddJwtBearer(options =>
@@ -78,7 +78,6 @@ namespace HotelManagerV2._0
             app.UseAuthentication();
             app.UseRouting();
 
-            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
