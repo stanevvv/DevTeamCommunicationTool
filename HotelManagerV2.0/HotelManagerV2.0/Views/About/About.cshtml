@@ -1,4 +1,7 @@
-﻿@{
+﻿@using HotelManagerV2._0.Models.BindingModels
+@model WorkerBindingModel
+
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -52,13 +55,13 @@
                             Do you work here?
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <form>
+                            <form asp-controller="LogIn" asp-action="Register" method="post">
                                 <div class="form-group">
-                                    <input type="text" class="form-control dropdown-item" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+                                    <input asp-for="Username" type="text" class="form-control dropdown-item" id="exampleInputUsername1" aria-describedby="usernameHelp" placeholder="Username">
                                 </div>
                                 <hr />
                                 <div class="form-group">
-                                    <input type="password" class="form-control dropdown-item" id="exampleInputPassword1" placeholder="Password">
+                                    <input asp-for="Password" type="password" class="form-control dropdown-item" id="exampleInputPassword1" placeholder="Password">
                                 </div>
                                 <hr />
                                 <div class="form-check">
