@@ -47,27 +47,14 @@
                   <li class="nav-item"><a asp-controller="Rooms" asp-action="Rooms" class="nav-link">Rooms</a></li>
                   <li class="nav-item"><a asp-controller="About" asp-action="About" class="nav-link">About</a></li>
                   <li class="nav-item"><a asp-controller="Contact" asp-action="Contact" class="nav-link">Contact</a></li>
-                  <li class="nav-item dropdown show">
-                      <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Do you work here?
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <form>
-                              <div class="form-group">
-                                  <input type="text" class="form-control dropdown-item" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
-                              </div>
-                              <hr />
-                              <div class="form-group">
-                                  <input type="password" class="form-control dropdown-item" id="exampleInputPassword1" placeholder="Password">
-                              </div>
-                              <hr />
-                              <div class="form-check">
-                                  <a class="form-check-label dropdown-item">Forgoten Password?</a>
-                              </div>
-                              <button type="submit" class="btn btn-primary dropdown-item">LogIn</button>
-                          </form>
-                      </div>
-                  </li>
+                  @if (User.Identity.IsAuthenticated)
+                  {
+                      <li class="nav-item"><a asp-controller="LogIn" asp-action="Show" class="nav-link">@User.Identity.Name</a></li>
+                  }
+                  else
+                  {
+                      @Html.Partial("_LoginPartial")
+                  }
               </ul>
           </div>
 	    </div>

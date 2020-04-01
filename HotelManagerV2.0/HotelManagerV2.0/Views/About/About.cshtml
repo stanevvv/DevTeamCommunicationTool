@@ -43,34 +43,20 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
-
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
                     <li class="nav-item"><a asp-controller="Rooms" asp-action="Rooms" class="nav-link">Rooms</a></li>
                     <li class="nav-item"><a asp-controller="About" asp-action="About" class="nav-link">About</a></li>
                     <li class="nav-item"><a asp-controller="Contact" asp-action="Contact" class="nav-link">Contact</a></li>
-                    <li class="nav-item dropdown show">
-                        <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Do you work here?
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <form asp-controller="LogIn" asp-action="Register" method="post">
-                                <div class="form-group">
-                                    <input asp-for="Username" type="text" class="form-control dropdown-item" id="exampleInputUsername1" aria-describedby="usernameHelp" placeholder="Username">
-                                </div>
-                                <hr />
-                                <div class="form-group">
-                                    <input asp-for="Password" type="password" class="form-control dropdown-item" id="exampleInputPassword1" placeholder="Password">
-                                </div>
-                                <hr />
-                                <div class="form-check">
-                                    <a class="form-check-label dropdown-item">Forgoten Password?</a>
-                                </div>
-                                <button type="submit" class="btn btn-primary dropdown-item">LogIn</button>
-                            </form>
-                        </div>
-                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item"><a asp-controller="LogIn" asp-action="Show" class="nav-link">@User.Identity.Name</a></li>
+                    }
+                    else
+                    {
+                        @Html.Partial("_LoginPartial")
+                    }
                 </ul>
             </div>
         </div>
@@ -106,7 +92,8 @@
                         </div>
                     </div>
                     <div class="pb-md-5">
-                        <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+                        <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. 
+                        But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
                         <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
                         <ul class="ftco-social d-flex">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>

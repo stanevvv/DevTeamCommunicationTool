@@ -32,7 +32,7 @@ namespace HotelManagerV2._0
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<HotelContext>(options => options.UseSqlServer(
-                    Configuration.GetConnectionString("StanevDbStrPC")));
+                    Configuration.GetConnectionString("DenisDbStr")));
 
             services.AddIdentity<Worker, IdentityRole>(options =>
             {
@@ -57,7 +57,8 @@ namespace HotelManagerV2._0
                  };
              });
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

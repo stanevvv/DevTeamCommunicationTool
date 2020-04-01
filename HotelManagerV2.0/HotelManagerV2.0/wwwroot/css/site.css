@@ -38,16 +38,71 @@
 }
 
 /* Main Blog Page Images */
-
+.blog-img-1 {
+    background-image: url('../images/image_1.jpg');
+}
+.blog-img-2 {
+    background-image: url('../images/image_2.jpg');
+}
+.blog-img-3 {
+    background-image: url('../images/image_3.jpg');
+}
 /* Blog Single Page Images */
 
 /* Contact Page Images */
 .contact-header-img {
     background-image: url('../images/bg_1.jpg');
 }
-
+/* Index Page Images */
+.index-header-img-1 {
+    background-image: url('../images/bg_1.jpg');
+}
+.index-header-img-2 {
+    background-image: url('../images/bg_2.jpg');
+}
+.index-header-img-3 {
+    background-image: url('../images/bg_3.jpg');
+}
+.index-rooms-img {
+    background-image: url('../images/room-3.jpg');
+}
+.index-pool-img {
+    background-image: url('../images/swimming-pool.jpg');
+}
+.index-restaurant-img {
+    background-image: url('../images/resto.jpg');
+}
+.index-spec-rooms-img {
+    background-image: url('../images/sleep.jpg');
+}
 /* Restaurant Page Images*/
-
+.restaurant-pattern {
+    background-image: url('../images/restaurant-pattern.jpg');
+}
+.menu-img-1 {
+    background-image: url('../images/menu-1.jpg');
+}
+.menu-img-2 {
+    background-image: url('../images/menu-2.jpg');
+}
+.menu-img-3 {
+    background-image: url('../images/menu-3.jpg');
+}
+.menu-img-4 {
+    background-image: url('../images/menu-4.jpg');
+}
+.menu-img-5 {
+    background-image: url('../images/menu-5.jpg');
+}
+.menu-img-6 {
+    background-image: url('../images/menu-6.jpg');
+}
+.menu-img-7 {
+    background-image: url('../images/menu-7.jpg');
+}
+.menu-img-8 {
+    background-image: url('../images/menu-8.jpg');
+}
 /* Rooms Main Page Images */
 .rooms-header-img {
     background-image: url('../images/bg_1.jpg');
@@ -92,4 +147,15 @@
 }
 .room-img-6 {
     background-image: url('../images/room-6.jpg');
+}
+
+/* People cards images */
+.person-card-1 {
+    background-image: url('../images/person_1.jpg');
+}
+.person-card-2 {
+    background-image: url('../images/person_2.jpg');
+}
+.person-card-3 {
+    background-image: url('../images/person_3.jpg');
 }

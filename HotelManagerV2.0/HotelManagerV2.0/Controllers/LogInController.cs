@@ -48,7 +48,8 @@ namespace HotelManagerV2._0.Controllers
 
                 if (isPasswordCorrect == true)
                 {
-                    return View("Views/About/About.cshtml");
+                    await _signInManager.SignInAsync(accountFound, isPersistent: true);
+                    return RedirectToAction("Index", "Home");
                     //Ok(new
                     //{
                     //    result = result,
@@ -130,6 +131,11 @@ namespace HotelManagerV2._0.Controllers
                 await _signInManager.SignInAsync(user, isPersistent: true);
             }
             return View("Views/Contact/Contact.cshtml");  
+        }
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
