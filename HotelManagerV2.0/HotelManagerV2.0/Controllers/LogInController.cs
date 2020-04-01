@@ -29,7 +29,7 @@ namespace HotelManagerV2._0.Controllers
             _signInManager = sim;
             _userManager = um;
             _config = config;
-            _context = context;
+            _context = context; 
         }
 
         public IActionResult LogIn()

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using HotelManagerV2._0.Models;
+using BusinessLayer;
 
 namespace HotelManagerV2._0.Controllers
 {
@@ -27,10 +28,6 @@ namespace HotelManagerV2._0.Controllers
         {
             return View();
         }
-
-        
-
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
