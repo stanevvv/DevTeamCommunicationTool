@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Developer Team Communication Tool</h1>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <h5 class="display-5">See and send messages under the messages tab. Manage your account by clicking on your name.</h5>
+        }
+        else
+        {
+            <h5 class="display-5">Login or register to be able to see and send messages.</h5>          
+        }
+    </div>
